@@ -16,7 +16,7 @@ Either /projects/PROJECTNAME/behat or ~/behat will work.
 
 2. Run `composer install` in the directory that contains composer.json.
 
-3. Confirm that it is installed by running `bin/behat`.
+3. Confirm that it is installed and let behat set up some default by running `behat --init`.
 
 ###  Selenium
 
@@ -32,7 +32,7 @@ Confirm that that page loads. Quit by using CTRL-C in terminal.
 
 ## Part 2: Set up some tests and run them
 
-1. Copy the features directory to your behat installation.
+1. Copy the contents of the features directory to your behat/features installation.
 2. Copy behat.yml to your behat installation, and edit the base_url setting.
 3. Start selenium. `selenium-server`
 4. Run any of the following:
