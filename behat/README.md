@@ -20,13 +20,13 @@ Either /projects/PROJECTNAME/behat or ~/behat will work.
 
 ###  Selenium
 
-1. Go to http://selenium-release.storage.googleapis.com/index.html and select the folder of the latest release.
+1. Install the selenium server: `brew install selenium-server-standalone`
 
-2. Download selenium-server-standalone-LATEST-VERSION.jar.
+2. If you haven't already, add homebrew's integration with macOS's launchctl manager: `brew tap homebrew/services`
 
-3. Place it wherever you like. Probably makes sense be system level rather than project level.
+3. Use brew's services to launch the selenium server and restart it each time you restart your computer: `sudo brew services start selenium-server-standalone`
 
-4. Confirm that it works by running in a new terminal session: `java -jar PATH-TO-SELENIUM.jar`
+4. Confirm that it works by running in a new terminal session: `selenium-server`
 There should be a message like "RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub".
 Confirm that that page loads. Quit by using CTRL-C in terminal.
 
@@ -34,15 +34,15 @@ Confirm that that page loads. Quit by using CTRL-C in terminal.
 
 1. Copy the features directory to your behat installation.
 2. Copy behat.yml to your behat installation, and edit the base_url setting.
-3. Start selenium. `java -jar PATH-TO-SELENIUM.jar`
+3. Start selenium. `selenium-server`
 4. Run any of the following:
-    - `bin/behat features/contact_form.feature` (tests the one feature)
-    - `bin/behat features` (runs all tests in the features directory)
-    - `bin/behat` (runs all tests that behat can find.)
+    - `behat features/contact_form.feature` (tests the one feature)
+    - `behat features` (runs all tests in the features directory)
+    - `behat` (runs all tests that behat can find.)
 
 ### Tips and further reading.
-- `bin/behat -di` to see all availble definitions (statements, assertions, etc).
-- `bin/behat --help` for all available commands and options.
+- `behat -di` to see all availble definitions (statements, assertions, etc).
+- `behat --help` for all available commands and options.
 - Use 'follow' for links, and 'press' for buttons.
 - http://behat.org/
 - http://docs.behat.org/quick_intro.html
